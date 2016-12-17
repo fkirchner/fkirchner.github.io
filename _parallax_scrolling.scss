@@ -1,0 +1,24 @@
+@mixin parallax-scrolling($px, $scale) {
+  .parallax {
+    perspective: 1px;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  .parallax-layer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+  .parallax-front {
+    transform: translateZ(0);
+  }
+  .parallax-back {
+    // translateZ needs to be a negative pixel value (-1px)
+    // The scale factor can be calculated with 1 + (translateZ * -1) / perspective
+    // transform: translateZ(-1) scale(2);
+    transform: translateZ($px) scale($scale);
+  }
+}

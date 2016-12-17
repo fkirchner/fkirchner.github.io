@@ -1,17 +1,46 @@
-h1 Florent Kirchner
-h3 Engineer, scientist, head of the Software Security Laboratory at List.
+.parallax
 
+  .head.parallax-layer.parallax-back
+    h1 Florent Kirchner
+    h3 Engineer, scientist, head of the Software Security Laboratory at List.
+    nav
+      ul
+        li: a twitter
+        li: a github
+        li: a stackoverflow
+        li: a dblp
+        // todo: icons
 
-div(class="twitter")
-  p Twitter handle 
-    a(href='https://twitter.com/__ftk') @__ftk
-  a(class="twitter-timeline"
-    href="https://twitter.com/__ftk"
-    data-tweet-limit="3"
-    data-chrome="transparent noheader nofooter noborders"
-      ) https://twitter.com/__ftk
-  script(async, src="//platform.twitter.com/widgets.js", charset="utf-8")
+  .writing.parallax-front
+    h2 Writing
 
-div(class="bib")
-  script(src="https://bibbase.org/dblp/Kirchner:Florent?jsonp=1&theme=simple")
+    .twitter
+      p Recent tweets
+      a(class="twitter-timeline"
+        href="https://twitter.com/__ftk"
+        data-tweet-limit="5"
+        data-chrome="transparent noheader nofooter noborders"
+          ) https://twitter.com/__ftk
+      script(async, src="//platform.twitter.com/widgets.js", charset="utf-8")
+
+    .bib
+      script(src="https://bibbase.org/dblp/Kirchner:Florent?jsonp=1&theme=simple")
+        // todo: custom file
+
+  .map.parallax-back
+    h2 Contact
+    #mapid
+    script.
+      var map = L.map('mapid').setView([48.7104, 2.1978], 13);
+      map.scrollWheelZoom.disable();
+      map.touchZoom.disable();
+      L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+          attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+      }).addTo(map);
+      L.marker([48.71261, 2.19446]).addTo(map)
+          .bindPopup('CEA Saclay Nano-INNOV<br> 91191 Gif-sur-Yvette<br> France')
+          .openPopup();
+    div Mail, phone
+
+// todo: footer?
 
