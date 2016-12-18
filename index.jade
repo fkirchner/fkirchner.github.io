@@ -29,17 +29,7 @@
 
   .map.parallax-back
     h2 Contact
-    #mapid
-    script.
-      var map = L.map('mapid').setView([48.7104, 2.1978], 13);
-      map.scrollWheelZoom.disable();
-      map.touchZoom.disable();
-      L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-          attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-      }).addTo(map);
-      L.marker([48.71261, 2.19446]).addTo(map)
-          .bindPopup('CEA Saclay Nano-INNOV<br> 91191 Gif-sur-Yvette<br> France')
-          .openPopup();
+    iframe(allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" src="./map.html")
     div Mail, phone
 
 // todo: footer?
