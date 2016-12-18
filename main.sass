@@ -1,0 +1,89 @@
+@import "parallax_scrolling"
+@import "susy"
+$susy: (columns: 12, gutters: .25, container: auto)
+
+$bg-color: #f4f4f4
+$fg-color: #444
+
+body
+  font-family: "Helvetica"
+  font-weight: 300
+  text-align: center
+  background: $bg-color
+  color: $fg-color
+  margin: 0
+p
+  // font-weight: 300
+
+a
+  color: #3b94d9
+
+// Divs
+/****************************************************************************/
+
+@include parallax-scrolling(-1px,2)
+
+div.head
+  padding: 50px 20px 0
+  h1
+    font-size: 65px
+    border-bottom: #CCC solid 1px
+    padding: 20px 0
+  h3
+    font-weight: 300
+    margin-bottom: 100px
+  a#arrow
+    bottom: 6vp
+
+h2
+  font-size: 45px
+  padding: 100px 0
+  color: invert($fg-color)
+  background: invert($bg-color)
+  margin: 0
+
+div.writing
+  @include container()
+  background-color: $bg-color
+  margin-top: 100vh;
+
+div.col
+  font-weight: 300
+  text-align: left
+  padding: 2em 0;
+
+div.twitter
+  @include span(isolate 3 at 2 of 12)
+  @extend .col
+
+div.bib
+  @include span(isolate 7 at 5 of 12)
+  @extend .col
+
+div#bibbase_header
+  display: none
+
+div.map
+  div#map
+    margin: 0
+    padding: 0
+    height: 400px
+  iframe
+    width: 100%
+    height: 400px
+
+// Icon bar
+/****************************************************************************/
+
+nav
+  ul
+    margin: 0
+    padding: 0
+    list-style: none
+  li
+    display: inline-block
+  a
+    display: block
+    padding: 6px 12px
+    text-decoration: none
+
