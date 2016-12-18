@@ -4,6 +4,7 @@ $susy: (columns: 12, gutters: .25, container: auto)
 
 $bg-color: #f4f4f4
 $fg-color: #444
+$map-height: 400px
 
 body
   font-family: "Helvetica"
@@ -32,8 +33,9 @@ div.head
   h3
     font-weight: 300
     margin-bottom: 100px
-  a#arrow
-    bottom: 6vp
+  span#arrow
+    position: absolute
+    bottom: 6vh
 
 h2
   font-size: 45px
@@ -63,14 +65,22 @@ div.bib
 div#bibbase_header
   display: none
 
+span.attribution
+  position: absolute
+  right: 10vw
+  font-style: italic
+  font-size: 0.8em
+
 div.map
-  div#map
-    margin: 0
-    padding: 0
-    height: 400px
   iframe
     width: 100%
-    height: 400px
+    height: $map-height
+  div.contact
+    @include container()
+    @include span(isolate 7 at 5 of 12)
+    @extend .col
+    height: 2*$map-height
+    margin-top: 400px
 
 // Icon bar
 /****************************************************************************/

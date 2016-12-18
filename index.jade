@@ -11,7 +11,7 @@
         li: a dblp
         // todo: icons
 
-    a(id="arrow") v
+    span(id="arrow") ...
       //todo: make img
 
   .writing.parallax-front
@@ -27,13 +27,19 @@
       script(async, src="//platform.twitter.com/widgets.js", charset="utf-8")
 
     .bib
+      p Publications
+        span(class="attribution") script from 
+          a(href="https://bibbase.org") BibBase
       script(src="https://bibbase.org/dblp/Kirchner:Florent?jsonp=1&theme=simple")
         // todo: custom file
+        // http://bibbase.org/show?bib=/fk.bib&jsonp=1&theme=simple
 
   .map.parallax-back
     h2 Contact
     iframe(allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" src="./map.html")
-    div Mail, phone
+
+    .contact
+      p Mail, phone
 
 // todo: footer?
 
