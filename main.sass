@@ -1,6 +1,6 @@
 @import "parallax_scrolling"
 @import "susy"
-$susy: (columns: 12, gutters: .25, container: auto)
+$susy: (columns: 11, gutters: .25, container: auto)
 
 $bg-color: #f4f4f4
 $fg-color: #444
@@ -22,7 +22,7 @@ a
 // Divs
 /****************************************************************************/
 
-@include parallax-scrolling(-1px,2)
+@include parallax-scrolling(-3px,4)
 
 div.head
   padding: 50px 20px 0
@@ -30,6 +30,7 @@ div.head
     font-size: 65px
     border-bottom: #CCC solid 1px
     padding: 20px 0
+    font-weight: 300
   h3
     font-weight: 300
     margin-bottom: 100px
@@ -49,17 +50,40 @@ div.writing
   background-color: $bg-color
   margin-top: 95vh;
 
+div.tools
+  @extend .writing
+  h3
+    text-align: center
+  p
+    text-align: center
+  div.banner
+    height: 10em
+    span.helper
+      display: inline-block
+      height: 30%
+      vertical-align: middle
+    img.banner
+      vertical-align: middle
+      max-width: 10em
+      max-height: 10em
+      margin: auto
+      display: block
+
 div.col
   font-weight: 300
   text-align: left
   padding: 2em 0;
 
 div.twitter
-  @include span(isolate 3 at 2 of 12)
+  @include span(isolate 3 at 2 of 11)
   @extend .col
 
 div.bib
-  @include span(isolate 7 at 5 of 12)
+  @include span(isolate 6 at 5 of 11)
+  @extend .col
+
+div.tool
+  @include span(2)
   @extend .col
 
 div#bibbase_header
@@ -77,10 +101,20 @@ div.map
     height: $map-height
   div.contact
     @include container()
-    @include span(isolate 7 at 5 of 12)
-    @extend .col
-    height: 2*$map-height
-    margin-top: 400px
+    // height: 2*$map-height
+    margin-top: $map-height
+    div.type
+      @include span(isolate 1 at 5 of 11)
+      @extend .col
+    div.field
+      @include span(isolate 5 at 6 of 11)
+      @extend .col
+
+div.footer
+  padding: 100px 0
+  color: invert($fg-color)
+  background: invert($bg-color)
+  margin: 0
 
 // Icon bar
 /****************************************************************************/
