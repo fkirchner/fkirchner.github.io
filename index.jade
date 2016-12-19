@@ -1,77 +1,88 @@
 .parallax
+  .parallax-layer.parallax-back
+    .head
+      h1 Florent Kirchner
+      h3 Engineer, scientist, head of the Software Security Laboratory at List.
+      nav
+        ul
+          li: a(href="http://twitter.com/__ftk") twitter
+          li: a(href="https://github.com/fkirchner") github
+          li: a(href="http://stackoverflow.com/users/303793/ftk") stackoverflow
+          li: a(href="http://dblp.uni-trier.de/pers/hd/k/Kirchner:Florent.html") dblp
+          // todo: icons
 
-  .head.parallax-layer.parallax-back
-    h1 Florent Kirchner
-    h3 Engineer, scientist, head of the Software Security Laboratory at List.
-    nav
-      ul
-        li: a(href="http://twitter.com/__ftk") twitter
-        li: a(href="https://github.com/fkirchner") github
-        li: a(href="http://stackoverflow.com/users/303793/ftk") stackoverflow
-        li: a(href="http://dblp.uni-trier.de/pers/hd/k/Kirchner:Florent.html") dblp
-        // todo: icons
+      span(id="arrow") ...
+        //todo: make img
 
-    span(id="arrow") ...
-      //todo: make img
+    .map
+      h2 Contact
+      // iframe(allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" src="./map.html")
+        // todo: link to Coming_to_Nano_INNOV.pdf
+      .contact
+        .type
+          p Mail
+          p Phone
+          p Address
+        .field
+          p first.last@cea.fr
+          p +33 (0) 169 080 010
+          p
+            address
+              | CEA Saclay Nano-INNOV
+              br
+              | Point Courrier 174
+              br
+              | 91191 Gif-sur-Yvette
+              br
+              | France
 
-  .tools.parallax-front
-    h2 Tools
+  .parallax-layer.parallax-front
+    .tools
+      h2 Tools
 
-    .tool
+      .firsttool
 
-    .tool
-      h3 Binsec
-      p Binary code analysis platform
+      .tool
+        .banner
+          // img(class="banner" src="http://binsec.gforge.inria.fr/img/LogoBinsec_v2.png")
+        p Binary code analysis platform
 
-    .tool
-      .banner
-        span(class="helper")
-        img(class="banner" src="http://frama-c.com/modern/framac.gif")
-      h3 Frama-C
-      p Source code analysis platform
+      .tool
+        .banner
+          // img(class="banner" src="http://frama-c.com/modern/framac.gif")
+        p Source code analysis platform
 
-    .tool
-      h3 GATeL
-      p Executable models analysis tool
+      .tool
+        .banner
+          // img(class="banner" src="http://www.ercim.eu/publication/Ercim_News/enw58/blanc.jpg")
+        p Executable models analysis tool
 
-    .tool
-      .banner
-        span(class="helper")
-        img(class="banner" src="http://unisim-vp.cea.fr/site/style/unisim.png")
-      h3 Unisim
-      p Development environment for virtual platforms
+      .tool
+        .banner
+          // img(class="banner" src="http://unisim-vp.cea.fr/site/style/unisim.png")
+        p Virtual platforms
 
-  .writing.parallax-front
-    h2 Writing
+    .writing
+      h2 Writing
 
-    .twitter
-      p Tweets
-      a(class="twitter-timeline"
-        href="https://twitter.com/__ftk"
-        data-tweet-limit="5"
-        data-chrome="transparent noheader nofooter noborders"
-          ) https://twitter.com/__ftk
-      script(async, src="//platform.twitter.com/widgets.js", charset="utf-8")
+      // .twitter
+      //   p Tweets
+      //   a(class="twitter-timeline"
+      //     href="https://twitter.com/__ftk"
+      //     data-tweet-limit="5"
+      //     data-chrome="transparent noheader nofooter noborders"
+      //       ) https://twitter.com/__ftk
+      //   script(async, src="//platform.twitter.com/widgets.js", charset="utf-8")
 
-    .bib
-      p Publications
-        span(class="attribution") script from 
-          a(href="https://bibbase.org") BibBase
-      script(src="https://bibbase.org/dblp/Kirchner:Florent?jsonp=1&theme=simple")
-        // todo: custom file
-        // http://bibbase.org/show?bib=/fk.bib&jsonp=1&theme=simple
+      // .bib
+      //   p Publications
+      //     span(class="attribution") script from 
+      //       a(href="https://bibbase.org") BibBase
+      //   script(src="https://bibbase.org/dblp/Kirchner:Florent?jsonp=1&theme=simple")
+      //     // todo: custom file
+      //     // http://bibbase.org/show?bib=/fk.bib&jsonp=1&theme=simple
 
-  .map.parallax-back
-    h2 Contact
-    iframe(allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" src="./map.html")
-    .contact
-      .type
-        p Mail
-        p Phone
-      .field
-        p first.last@cea.fr
-        p +33 (0) 169 080 010
 
-  // .footer.parallax-back
-  //   p (C) 2016, Florent Kirchner
+    // .footer.parallax-back
+    //   p (C) 2016, Florent Kirchner
 
