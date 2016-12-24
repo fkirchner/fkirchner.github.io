@@ -5,18 +5,23 @@ $susy: (columns: 12, gutters: .25, gutter-position: before, container: auto)
 
 $bg-color: #f4f4f4
 $fg-color: #444
+$head-height: 95vh
 $map-height: 400px
 
 body
-  font-family: "Helvetica"
-  font-weight: 300
-  text-align: center
-  background: $bg-color
-  color: $fg-color
   margin: 0
   width: 100%
   height: 100%
   overflow: auto
+  background: $bg-color
+  color: $fg-color
+  font-family: "Helvetica Neue", "Calibri Light", Roboto, sans-serif
+  font-weight: 300
+  text-rendering: optimizeLegibility
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+  letter-spacing: 0.02em;
+  text-align: center
 
 h1
   font-size: 65px
@@ -42,7 +47,7 @@ p
 a
   color: #3b94d9
 
-// Divs
+/* DIVS *********************************************************************/
 /****************************************************************************/
 
 // @include parallax-scrolling(-1px,2)
@@ -52,7 +57,7 @@ body
 
 div.head
   @include span(last 12)
-  height: 95vh
+  height: $head-height
   span#arrow
     position: absolute
     bottom: 6vh
@@ -68,9 +73,8 @@ div.writing
     background: invert($bg-color)
     margin: 0
 
-
 div.tools
-  @extend .writing
+  @extend div.writing
   p
     text-align: center
   div.banner
@@ -139,7 +143,7 @@ div.footer
   background: invert($bg-color)
   margin: 0
 
-// Icon bar
+/* ICON BAR *****************************************************************/
 /****************************************************************************/
 
 nav
