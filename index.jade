@@ -1,91 +1,89 @@
-.parallax
-  .parallax-back
-    .head
-      h1 Florent Kirchner
-      h3 Engineer, scientist, head of the Software Security Laboratory at List.
-      nav
-        ul
-          li: a(class="fa fa-fw fa-twitter" href="http://twitter.com/__ftk")
-          li: a(class="fa fa-fw fa-github" href="https://github.com/fkirchner")
-          li: a(class="fa fa-fw fa-stack-overflow" href="http://stackoverflow.com/users/303793/ftk")
-          li: a(class="fa fa-fw fa-folder-open" href="http://dblp.uni-trier.de/pers/hd/k/Kirchner:Florent.html")
+.header
+  h1 Florent Kirchner
+  h3 Engineer, scientist, head of the Software Security Laboratory at List.
+  nav
+    ul
+      li: a(class="fa fa-fw fa-twitter" href="http://twitter.com/__ftk")
+      li: a(class="fa fa-fw fa-github" href="https://github.com/fkirchner")
+      li: a(class="fa fa-fw fa-stack-overflow" href="http://stackoverflow.com/users/303793/ftk")
+      li: a(class="fa fa-fw fa-folder-open" href="http://dblp.uni-trier.de/pers/hd/k/Kirchner:Florent.html")
 
-      // span(id="arrow") ...
-        //todo: make img
+.map
+  h2
+    span(class="fa fa-location-arrow") 
+    | Contact
+  script(src="https://api.tiles.mapbox.com/mapbox-gl-js/v0.28.0/mapbox-gl.js")
+  iframe(allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" src="./map.html")
+    // todo: link to Coming_to_Nano_INNOV.pdf
+  .contact
+    .type
+      p Mail
+      p Phone
+      p Address
+    .field
+      p first.last@cea.fr
+      p +33 (0) 169 080 010
+      p
+        address
+          | CEA Saclay Nano-INNOV
+          br
+          | Point Courrier 174
+          br
+          | 91191 Gif-sur-Yvette
+          br
+          | France
 
-    .map
-      h2
-        span(class="fa fa-location-arrow") Contact
-      script(src="https://api.tiles.mapbox.com/mapbox-gl-js/v0.28.0/mapbox-gl.js")
-      iframe(allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" src="./map.html")
-        // todo: link to Coming_to_Nano_INNOV.pdf
-      .contact
-        .type
-          p Mail
-          p Phone
-          p Address
-        .field
-          p first.last@cea.fr
-          p +33 (0) 169 080 010
-          p
-            address
-              | CEA Saclay Nano-INNOV
-              br
-              | Point Courrier 174
-              br
-              | 91191 Gif-sur-Yvette
-              br
-              | France
+.tools
+  h2
+    span(class="fa fa-wpexplorer")
+    | Tools
 
-  .parallax-layer.parallax-front
-    .tools
-      h2
-        span(class="fa fa-wpexplorer") Tools
+  .firsttool
 
-      .firsttool
+  .tool
+    .banner
+      img(class="banner" src="assets/img/binsec.png")
+    p Binary code analysis platform
 
-      .tool
-        .banner
-          img(class="banner" src="assets/img/binsec.png")
-        p Binary code analysis platform
+  .tool
+    .banner
+      img(class="banner" src="assets/img/frama-c.png")
+    p Source code analysis platform
 
-      .tool
-        .banner
-          img(class="banner" src="assets/img/frama-c.png")
-        p Source code analysis platform
+  .tool
+    .banner
+      img(class="banner" src="assets/img/gatel.png")
+    p Executable models analysis tool
 
-      .tool
-        .banner
-          img(class="banner" src="assets/img/gatel.png")
-        p Executable models analysis tool
+  .tool
+    .banner
+      img(class="banner" src="assets/img/unisim.png")
+    p Hardware platforms virtualization framework
 
-      .tool
-        .banner
-          img(class="banner" src="assets/img/unisim.png")
-        p Hardware platforms virtualization framework
+.writing
+  h2
+    span(class="fa fa-comments-o")
+    | Writing
 
-    .writing
-      h2
-        span(class="fa fa-comments-o") Writing
+  .twitter
+    p Tweets
+    a(class="twitter-timeline"
+      href="https://twitter.com/__ftk"
+      data-tweet-limit="5"
+      data-chrome="transparent noheader nofooter noborders"
+        ) https://twitter.com/__ftk
+    script(async, src="//platform.twitter.com/widgets.js", charset="utf-8")
 
-      .twitter
-        p Tweets
-        a(class="twitter-timeline"
-          href="https://twitter.com/__ftk"
-          data-tweet-limit="5"
-          data-chrome="transparent noheader nofooter noborders"
-            ) https://twitter.com/__ftk
-        script(async, src="//platform.twitter.com/widgets.js", charset="utf-8")
-
-      .bib
-        p Publications
-          span(class="attribution") script from 
-            a(href="https://bibbase.org") BibBase
-        script(src="https://bibbase.org/dblp/Kirchner:Florent?jsonp=1&theme=simple")
-          // todo: custom file
-          // http://bibbase.org/show?bib=/fk.bib&jsonp=1&theme=simple
+  .bib
+    p Publications
+      span(class="attribution") script from 
+        a(href="https://bibbase.org") BibBase
+    script(src="https://bibbase.org/dblp/Kirchner:Florent?jsonp=1&theme=simple")
+      // todo: custom file
+      // http://bibbase.org/show?bib=/fk.bib&jsonp=1&theme=simple
 
 
-    // .footer.parallax-back
-    //   p (C) 2016, Florent Kirchner
+.footer
+  span(class="fa fa-copyright")
+  | &nbsp;2017, Florent Kirchner
 
