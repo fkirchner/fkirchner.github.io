@@ -1,12 +1,14 @@
 @import "susy"
-$susy: (columns: 12, gutters: .25, gutter-position: before, container: 80%, container-position: center, debug: (image: show, color: rgba(0,0,1,0.5), output: overlay, toggle: top right,),)
+$susy: (columns: 12, gutters: .25, gutter-position: after, container: 80%, container-position: center, debug: (image: show, color: rgba(0,0,1,0.5), output: overlay, toggle: top right,),)
 // $susy: (columns: 12, gutters: .25, gutter-position: before, container: auto)
 
 $bg-color: #f4f4f4
 $fg-color: #444
-$hi-color: #95001a
-$map-height: 400px
+$hi-color: $fg-color+#888 //#95001a
+$link-color: #3b94d9
+$map-height: 200px
 $spacing: 1em;
+$border: #eee solid 1px //none // #CCC solid 1px
 
 body
   @include container
@@ -20,130 +22,149 @@ body
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
   letter-spacing: 0.02em
-
-h1
-  font-weight: 300
-  // border-bottom: #CCC solid 1px
+  margin-top: 0
+  margin-bottom: 0
 
 h2
+  @include span(11)
   margin: 0
+  margin-bottom: $spacing
   font-weight: 300
-  // border: #CCC solid 1px
-
-h3
-  margin: 0
-  font-weight: 300
-
-p
-  // font-weight: 300
 
 a
-  color: #3b94d9
+  color: $link-color
 
 /* DIVS *********************************************************************/
 /****************************************************************************/
 
 div.generic
-  @include span(12)
-  border: #CCC solid 1px
+  @include span(last 12)
+  border: $border
+  border-bottom: none
+  border-left: none
+  border-right: none
   padding: $spacing 0
 
 div.contrast
   color: invert($fg-color)
-  background: transparentize(invert($bg-color),0.25)
+  background: transparentize(invert($bg-color),0.3)
+  div.icon
+    color: invert($hi-color)
+
+div.icon
+  @include span(first 1)
+  text-align: right
+  font-size: x-large
+  color: $hi-color
 
 div.header
   @extend div.generic
+  border-top: none
   h1
-    @include span(4 of 12)
+    @include span(7 of 12)
     margin-top: 0
-    margin-bottom: $spacing
+    margin-bottom: ($spacing/2)
+    margin-left: span(1 wide of 12)
+    font-weight: 300
   h3
-    @include span(8 of 12)
+    @include span(11 of 12)
+    margin-top: 0
+    margin-left: span(1 wide of 12)
+    margin-bottom: $spacing
+    font-weight: 300
+  nav
+    @include span(last 4 of 12)
+    ul
+      margin: 0
+      padding: 0
+      list-style: none
+    li
+      display: inline-block
+      // width: span(1 wide of 4)
+      // background-color: $link-color
+    a
+      display: block
+      padding-top: 6px
+      padding-bottom: 6px
+      padding-right: 12px
+      text-decoration: none
+      // color: $bg-color
+
+div.map
+  @extend div.generic
+  iframe
+    border: none
+    @include span(6 of 12)
+    height: $map-height
+    margin-left: span(1 wide of 12)
+  div.contact
+    @include span(last 4 of 12)
+    div.type
+      @include span(first 1 of 4)
+      @extend .col
+      color: $hi-color
+    div.field
+      @include span(last 3 of 4)
+      @extend .col
+
+div.tools
+  @extend div.generic
+  // @extend div.contrast
+  p
+    @include span(10)
+    margin: 0
+    margin-left: span(1 wide)
+    margin-bottom: 1.5*$spacing
+  div.firsttool
+    @include span(5 of 12)
+    @extend .col
+    margin-left: span(1 wide of 12)
+  div.tool
+    @include span(5 of 12)
+    @extend .col
+  div.desc
+    @include span(2 of 5)
+  div.banner
+    @include span(2 of 5)
+    height: 4em
+    img.banner
+      max-width: 90%
+      max-height: 90%
+      margin: auto
 
 div.writing
   @extend div.generic
   div.twitter
-    @include span(4 at 2 of 12)
+    @include span(4 of 12)
     @extend .col
-
+    margin-left: span(1 wide)
   div.bib
     @include span(6 at 6 of 12)
     @extend .col
-
   div#bibbase_header
     display: none
-
   span.attribution
     @include span (last 2 of 6)
-    // position: absolute
-    // right: 10vw
     font-style: italic
     font-size: 0.8em
-
-div.tools
-  @extend div.generic
-  @extend div.contrast
-  p
-    text-align: center
-  div.firsttool
-    @include span(first 2 of 12)
-    @extend .col
-  div.tool
-    @include span(2 of 12)
-    @extend .col
-  div.banner
-    height: 10em
-    position: relative
-    img.banner
-      max-width: 80%
-      max-height: 80%
-      margin: auto
-      position: absolute
-      left: 0
-      right: 0
-      top: 0
-      bottom: 0
 
 div.col
   font-weight: 300
   text-align: left
   padding: 0;
 
-div.map
-  @extend div.generic
-  iframe
-    border: #CCC solid 1px
-    @include span(7 at 2 of 12)
-    height: $map-height
-  div.contact
-    @include span(last 4 of 12)
-    div.type
-      @include span(first 1 of 4)
-      @extend .col
-    div.field
-      @include span(last 3 of 4)
-      @extend .col
-
 div.footer
   @extend div.generic
-  @extend div.contrast
-  span.fa
-    font-size: smaller
+  // @extend div.contrast
+  font-size: smaller
+  h4
+    @include span(last 11)
+    margin: 0
+    font-weight: 300
+  div.icon
+    font-size: small
+
 
 /* ICON BAR *****************************************************************/
 /****************************************************************************/
-
-nav
-  @include span(last 3 of 12)
-  ul
-    margin: 0
-    padding: 0
-    list-style: none
-  li
-    display: inline-block
-  a
-    display: block
-    padding: 6px 12px
-    text-decoration: none
 
