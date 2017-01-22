@@ -1,15 +1,15 @@
 @import "susy"
-$susy: (columns: 12, gutters: .25, gutter-position: before, container: auto, debug: (image: show, color: blue, output: overlay, toggle: top right,),)
+$susy: (columns: 12, gutters: .25, gutter-position: before, container: 80%, container-position: center, debug: (image: show, color: rgba(0,0,1,0.5), output: overlay, toggle: top right,),)
 // $susy: (columns: 12, gutters: .25, gutter-position: before, container: auto)
-
 
 $bg-color: #f4f4f4
 $fg-color: #444
 $hi-color: #95001a
 $map-height: 400px
+$spacing: 1em;
 
 body
-  margin: 0
+  @include container
   width: 100%
   height: 100%
   background: $bg-color
@@ -28,6 +28,7 @@ h1
 h2
   margin: 0
   font-weight: 300
+  // border: #CCC solid 1px
 
 h3
   margin: 0
@@ -42,14 +43,47 @@ a
 /* DIVS *********************************************************************/
 /****************************************************************************/
 
+div.generic
+  @include span(12)
+  border: #CCC solid 1px
+  padding: $spacing 0
+
+div.contrast
+  color: invert($fg-color)
+  background: transparentize(invert($bg-color),0.25)
+
 div.header
-  @include span(first 11)
+  @extend div.generic
+  h1
+    @include span(4 of 12)
+    margin-top: 0
+    margin-bottom: $spacing
+  h3
+    @include span(8 of 12)
 
 div.writing
-  @include span(last 12)
+  @extend div.generic
+  div.twitter
+    @include span(4 at 2 of 12)
+    @extend .col
+
+  div.bib
+    @include span(6 at 6 of 12)
+    @extend .col
+
+  div#bibbase_header
+    display: none
+
+  span.attribution
+    @include span (last 2 of 6)
+    // position: absolute
+    // right: 10vw
+    font-style: italic
+    font-size: 0.8em
 
 div.tools
-  @extend div.writing
+  @extend div.generic
+  @extend div.contrast
   p
     text-align: center
   div.firsttool
@@ -74,42 +108,26 @@ div.tools
 div.col
   font-weight: 300
   text-align: left
-  padding: 2em 0;
-
-div.twitter
-  @include span(isolate 4 at 2 of 12)
-  @extend .col
-
-div.bib
-  @include span(isolate 6 at 6 of 12)
-  @extend .col
-
-div#bibbase_header
-  display: none
-
-span.attribution
-  position: absolute
-  right: 10vw
-  font-style: italic
-  font-size: 0.8em
+  padding: 0;
 
 div.map
-  @include span(first 11)
+  @extend div.generic
   iframe
     border: #CCC solid 1px
-    @include span(first 7 of 11)
+    @include span(7 at 2 of 12)
     height: $map-height
   div.contact
-    @include span(last 3 of 11)
+    @include span(last 4 of 12)
     div.type
-      @include span(isolate 1 at 1 of 11)
+      @include span(first 1 of 4)
       @extend .col
     div.field
-      @include span(isolate last 6 at 4 of 11)
+      @include span(last 3 of 4)
       @extend .col
 
 div.footer
-  @include span(first 11)
+  @extend div.generic
+  @extend div.contrast
   span.fa
     font-size: smaller
 
@@ -117,6 +135,7 @@ div.footer
 /****************************************************************************/
 
 nav
+  @include span(last 3 of 12)
   ul
     margin: 0
     padding: 0
