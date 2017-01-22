@@ -52,6 +52,12 @@ div.tools
   @extend div.writing
   p
     text-align: center
+  div.firsttool
+    @include span(first 2 of 12)
+    @extend .col
+  div.tool
+    @include span(2 of 12)
+    @extend .col
   div.banner
     height: 10em
     position: relative
@@ -76,14 +82,6 @@ div.twitter
 
 div.bib
   @include span(isolate 6 at 6 of 12)
-  @extend .col
-
-div.firsttool
-  @include span(first 2 of 12)
-  @extend .col
-
-div.tool
-  @include span(2 of 12)
   @extend .col
 
 div#bibbase_header
