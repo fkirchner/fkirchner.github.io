@@ -7,7 +7,7 @@ $fg-color: #444
 $hi-color: $fg-color+#888 //#95001a
 $link-color: #3b94d9
 $map-height: 200px
-$spacing: 1em;
+$spacing: 1.5em;
 $border: #eee solid 1px //none // #CCC solid 1px
 
 body
@@ -28,8 +28,9 @@ body
 h2
   @include span(11)
   margin: 0
-  margin-bottom: $spacing
+  margin-bottom: 1em
   font-weight: 300
+  color: $hi-color
 
 a
   color: $link-color
@@ -52,7 +53,7 @@ div.contrast
     color: invert($hi-color)
 
 div.icon
-  @include span(first 1)
+  @include span(1)
   text-align: right
   font-size: x-large
   color: $hi-color
@@ -119,6 +120,9 @@ div.tools
     @include span(5 of 12)
     @extend .col
     margin-left: span(1 wide of 12)
+    div.banner
+      img.banner
+        height: 2.5em
   div.tool
     @include span(5 of 12)
     @extend .col
@@ -164,7 +168,4 @@ div.footer
   div.icon
     font-size: small
 
-
-/* ICON BAR *****************************************************************/
-/****************************************************************************/
 
