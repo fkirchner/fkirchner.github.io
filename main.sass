@@ -8,7 +8,7 @@ $hi-color: $fg-color+#888 //#95001a
 $link-color: #3b94d9
 $map-height: 200px
 $spacing: 1.5em;
-$border: #eee solid 1px //none // #CCC solid 1px
+$border: $hi-color+#222 solid 1px
 
 body
   @include container
@@ -103,9 +103,11 @@ div.map
     div.type
       @include span(first 1 of 4)
       @extend .col
+      border-right: 3px solid white
       color: $hi-color
+      height: $map-height
     div.field
-      @include span(last 3 of 4)
+      @include span(2 of 4)
       @extend .col
 
 div.tools
@@ -129,12 +131,12 @@ div.tools
   div.desc
     @include span(2 of 5)
   div.banner
-    @include span(2 of 5)
+    @include span(first 2 of 5)
     height: 4em
+    border-right: 3px solid white
     img.banner
       max-width: 90%
       max-height: 90%
-      margin: auto
 
 div.writing
   @extend div.generic
@@ -153,9 +155,10 @@ div.writing
     font-size: 0.8em
 
 div.col
-  font-weight: 300
+  // font-weight: 300
   text-align: left
-  padding: 0;
+  padding: 0
+  margin-bottom: 1em
 
 div.footer
   @extend div.generic
