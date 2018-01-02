@@ -5,8 +5,10 @@
 $susy: (columns: 12, gutters: .25, gutter-position: after, container: 100%)
 
 $bg-color: #fbfbfb
+$bg-contrast-color: #333
 $fg-color: #333
 $hi-color: $fg-color+#999 //#95001a
+$lo-color: transparentize($bg-color,0.9)
 $link-color: #3b94d9
 $map-height: 300px
 $spacing: 2em
@@ -42,7 +44,7 @@ a
   color: $link-color
 
 .sym
-  color: transparentize($bg-color,0.9)
+  color: $lo-color
 
 
 /* DIVS *********************************************************************/
@@ -58,7 +60,7 @@ div.generic
 
 div.contrast
   color: invert($fg-color)
-  background: transparentize(invert($bg-color),0.2)
+  background: $bg-contrast-color
 
 div.icon
   @include span(1)
@@ -72,28 +74,36 @@ div.header
   border-top: none
   padding-top: 3*$spacing
   // margin-bottom: $spacing
-  h1
+  div.title
     @include span(6 of 12)
+    margin-left: span(2 wide of 12)
+  h1
     margin-top: 0
     margin-bottom: 0 //$spacing*1.618
-    margin-left: span(2 wide of 12)
     font-weight: 600
   h3
-    @include span(10 of 12)
+    // @include span(6 of 12)
     margin-top: 0
-    margin-left: span(2 wide of 12)
+    // margin-left: span(2 wide of 12)
     margin-bottom: 0
     font-weight: 300
   nav
-    @include span(last 4 of 12)
+    @include span(last 3 of 12)
     ul
       margin: 0
       padding: 0
       list-style: none
     li
-      display: inline-block
+      display: list-item //inline-block
     a
-      padding-right: 6px
+      margin: 0
+      padding: 4px 3px 8px 3px
+      border: 1px dashed $link-color
+      // padding-right: 6px
+      color: $bg-contrast-color + #080808
+      background: $link-color
+      background-clip: padding-box
+
 
 div.map
   @extend div.generic
@@ -139,12 +149,14 @@ div.tools
   div.banner
     @include span(first 2 of 4)
     height: 4em
-    border-right: 2px solid transparentize($bg-color,0.9)
+    border-right: 2px solid $lo-color
     img.banner
       max-width: 90%
       max-height: 90%
   div.desc
     @include span(1 of 4)
+  h2
+    color: $lo-color
 
 div.writing
   @extend div.generic
@@ -159,7 +171,7 @@ div.writing
   div#bibbase_header
     display: none
   span.attribution
-    @include span (last 2 of 5)
+    @include span (last 1 of 5)
     font-style: italic
     font-size: small
 
