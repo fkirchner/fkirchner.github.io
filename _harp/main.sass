@@ -1,13 +1,15 @@
 @import "susy"
+// Debug mode for Susy
 // $susy: (columns: 12, gutters: .25, gutter-position: after, container: 80%, container-position: center, debug: (image: show, color: rgba(0,0,1,0.5), output: overlay, toggle: top right,),)
-$susy: (columns: 12, gutters: .25, gutter-position: after, container: 80%)
+// Deploy mode for Susy
+$susy: (columns: 12, gutters: .25, gutter-position: after, container: 100%)
 
 $bg-color: #fbfbfb
 $fg-color: #333
 $hi-color: $fg-color+#999 //#95001a
 $link-color: #3b94d9
-$map-height: 200px
-$spacing: 2em;
+$map-height: 300px
+$spacing: 2em
 $border: none //$hi-color+#222 solid 1px
 $border-vert: 2px solid white
 
@@ -29,6 +31,7 @@ body
 h2
   @include span(11)
   margin: 0
+  margin-left: span(1 wide of 12)
   margin-bottom: 1em
   font-weight: 300
   color: $hi-color
@@ -37,6 +40,10 @@ h2
 
 a
   color: $link-color
+
+.sym
+  color: transparentize($bg-color,0.9)
+
 
 /* DIVS *********************************************************************/
 /****************************************************************************/
@@ -47,13 +54,11 @@ div.generic
   border-bottom: none
   border-left: none
   border-right: none
-  padding: $spacing 0
+  padding: $spacing 0 $spacing*3.618 0
 
 div.contrast
   color: invert($fg-color)
-  background: transparentize(invert($bg-color),0.3)
-  div.icon
-    color: invert($hi-color)
+  background: transparentize(invert($bg-color),0.2)
 
 div.icon
   @include span(1)
@@ -63,20 +68,21 @@ div.icon
 
 div.header
   @extend div.generic
+  @extend div.contrast
   border-top: none
-  margin-top: 2*$spacing
-  margin-bottom: $spacing
+  padding-top: 3*$spacing
+  // margin-bottom: $spacing
   h1
-    @include span(7 of 12)
+    @include span(6 of 12)
     margin-top: 0
-    margin-bottom: ($spacing/(2*1.516))
-    margin-left: span(1 wide of 12)
+    margin-bottom: 0 //$spacing*1.618
+    margin-left: span(2 wide of 12)
     font-weight: 600
   h3
-    @include span(11 of 12)
+    @include span(10 of 12)
     margin-top: 0
-    margin-left: span(1 wide of 12)
-    margin-bottom: $spacing
+    margin-left: span(2 wide of 12)
+    margin-bottom: 0
     font-weight: 300
   nav
     @include span(last 4 of 12)
@@ -86,73 +92,68 @@ div.header
       list-style: none
     li
       display: inline-block
-      // width: span(1 wide of 4)
-      // background-color: $link-color
     a
-      display: block
-      padding-top: 6px
-      padding-bottom: 6px
-      padding-right: 12px
-      text-decoration: none
-      // color: $bg-color
+      padding-right: 6px
 
 div.map
   @extend div.generic
   iframe
     border: none
-    @include span(6 of 12)
+    @include span(4 of 12)
     height: $map-height
-    margin-left: span(1 wide of 12)
+    margin-left: span(2 wide of 12)
   div.contact
-    @include span(last 4 of 12)
+    @include span(last 5 of 12)
     div.type
-      @include span(first 1 of 4)
+      @include span(first 1 of 5)
       @extend .col
       border-right: $border-vert
-      color: $hi-color
       text-transform: uppercase
-      // font-size: small
       height: $map-height
+      p
+        font-size: 0.8em
+        margin: 1.6em 1em
     div.field
-      @include span(2 of 4)
+      @include span(2 of 5)
       @extend .col
 
 div.tools
   @extend div.generic
-  // @extend div.contrast
+  @extend div.contrast
   p
-    @include span(10)
+    @include span(4)
     margin: 0
-    margin-left: span(1 wide of 12)
+    margin-left: span(2 wide of 12)
+    margin-right: span(4)
     margin-bottom: 1.5*$spacing
   div.firsttool
-    @include span(5 of 12)
+    @include span(4 of 12)
     @extend .col
-    margin-left: span(1 wide of 12)
+    margin-left: span(2 wide of 12)
     div.banner
       img.banner
         height: 2.5em
   div.tool
-    @include span(5 of 12)
+    @include span(4 of 12)
     @extend .col
-  div.desc
-    @include span(2 of 5)
   div.banner
-    @include span(first 2 of 5)
+    @include span(first 2 of 4)
     height: 4em
-    border-right: $border-vert
+    border-right: 2px solid transparentize($bg-color,0.9)
     img.banner
       max-width: 90%
       max-height: 90%
+  div.desc
+    @include span(1 of 4)
 
 div.writing
   @extend div.generic
   div.twitter
     @include span(3 of 12)
     @extend .col
-    margin-left: span(1 wide of 12)
+    margin-left: span(2 wide of 12)
   div.bib
-    @include span(5 at 7 of 12)
+    @include span(4 at 7 of 12)
     @extend .col
     margin-left: span(1 wide of 12)
   div#bibbase_header
@@ -170,13 +171,23 @@ div.col
 
 div.footer
   @extend div.generic
-  // @extend div.contrast
+  @extend div.contrast
   font-size: smaller
-  h4
-    @include span(last 11)
-    margin: 0
-    font-weight: 300
   div.icon
     font-size: small
+    // color: $hi-color
+  h4
+    @include span(7)
+    margin: 0
+    font-weight: 300
+  nav
+    @include span(last 2 of 12)
+    ul
+      margin: 0
+      padding: 0
+      list-style: none
+    li
+      display: inline-block
+      padding-right: 6px
 
 
