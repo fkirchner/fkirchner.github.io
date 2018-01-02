@@ -18,9 +18,9 @@
 mapboxgl.accessToken = 'pk.eyJ1IjoiZmtpcmNobmVyIiwiYSI6ImNpd3R3MzVxbTAwMHIyeXFvNWhrdHQyMWwifQ.8u1el3vkEHlfEJzcCT7GxA';
 var map = new mapboxgl.Map({
     container: 'map', // container id
-    style: 'mapbox://styles/mapbox/light-v9', //stylesheet location
+    style: 'mapbox://styles/fkirchner/cjbxrug72emcd2qtgtj95xt3o', //stylesheet location
     center: [2.19446, 48.71261], // starting position
-    zoom: 6, // starting zoom
+    zoom: 4, // starting zoom
     interactive: false
 });
 
@@ -53,8 +53,8 @@ map.on('load', function () {
         "layout": {
             "icon-image": "{icon}-15",
             "text-field": "{title}",
-            "text-font": ["Open Sans Semibold", "Arial Unicode MS Bold"],
-            "text-offset": [0, 0.6],
+            <!-- "text-font": ["Helvetica Neue", "Calibri Light", "Roboto", "sans-serif", "Open Sans Semibold", "Arial Unicode MS Bold"], -->
+            "text-offset": [0, 0.4],
             "text-anchor": "top"
         }
     });

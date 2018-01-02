@@ -2,13 +2,14 @@
 // $susy: (columns: 12, gutters: .25, gutter-position: after, container: 80%, container-position: center, debug: (image: show, color: rgba(0,0,1,0.5), output: overlay, toggle: top right,),)
 $susy: (columns: 12, gutters: .25, gutter-position: after, container: 80%)
 
-$bg-color: #f4f4f4
-$fg-color: #444
-$hi-color: $fg-color+#888 //#95001a
+$bg-color: #fbfbfb
+$fg-color: #333
+$hi-color: $fg-color+#999 //#95001a
 $link-color: #3b94d9
 $map-height: 200px
 $spacing: 2em;
-$border: $hi-color+#222 solid 1px
+$border: none //$hi-color+#222 solid 1px
+$border-vert: 2px solid white
 
 body
   @include container
@@ -31,6 +32,8 @@ h2
   margin-bottom: 1em
   font-weight: 300
   color: $hi-color
+  text-transform: uppercase
+  font-size: large
 
 a
   color: $link-color
@@ -61,12 +64,14 @@ div.icon
 div.header
   @extend div.generic
   border-top: none
+  margin-top: 2*$spacing
+  margin-bottom: $spacing
   h1
     @include span(7 of 12)
     margin-top: 0
-    margin-bottom: ($spacing/2)
+    margin-bottom: ($spacing/(2*1.516))
     margin-left: span(1 wide of 12)
-    font-weight: 300
+    font-weight: 600
   h3
     @include span(11 of 12)
     margin-top: 0
@@ -103,8 +108,10 @@ div.map
     div.type
       @include span(first 1 of 4)
       @extend .col
-      // border-right: 3px solid white
+      border-right: $border-vert
       color: $hi-color
+      text-transform: uppercase
+      // font-size: small
       height: $map-height
     div.field
       @include span(2 of 4)
@@ -116,7 +123,7 @@ div.tools
   p
     @include span(10)
     margin: 0
-    margin-left: span(1 wide)
+    margin-left: span(1 wide of 12)
     margin-bottom: 1.5*$spacing
   div.firsttool
     @include span(5 of 12)
@@ -133,7 +140,7 @@ div.tools
   div.banner
     @include span(first 2 of 5)
     height: 4em
-    border-right: 3px solid white
+    border-right: $border-vert
     img.banner
       max-width: 90%
       max-height: 90%
@@ -141,18 +148,19 @@ div.tools
 div.writing
   @extend div.generic
   div.twitter
-    @include span(4 of 12)
+    @include span(3 of 12)
     @extend .col
-    margin-left: span(1 wide)
+    margin-left: span(1 wide of 12)
   div.bib
-    @include span(6 at 6 of 12)
+    @include span(5 at 7 of 12)
     @extend .col
+    margin-left: span(1 wide of 12)
   div#bibbase_header
     display: none
   span.attribution
-    @include span (last 2 of 6)
+    @include span (last 2 of 5)
     font-style: italic
-    font-size: 0.8em
+    font-size: small
 
 div.col
   // font-weight: 300
