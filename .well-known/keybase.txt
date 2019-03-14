@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/fkirchner
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://fkirchner.github.io
+  * I am fkirchner (https://keybase.io/fkirchner) on keybase.
+  * I have a public key ASCdB5koG53IoMhhBuvk5JILil2RwSHrruxr9CcbGX-sdwo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01209d0799281b9dc8a0c86106ebe4e4920b8a5d91c121ebaeec6bf4271b197fac770a",
+      "host": "keybase.io",
+      "kid": "01209d0799281b9dc8a0c86106ebe4e4920b8a5d91c121ebaeec6bf4271b197fac770a",
+      "uid": "02309c9df1c18a75b50892238573b519",
+      "username": "fkirchner"
+    },
+    "merkle_root": {
+      "ctime": 1552600876,
+      "hash": "c8eadcbc6f1fa8772842351baf239543cd83741cd1260393dec68c923344b56c8651a7b1281b1aca96173b2e2a272f1663f701f005ca5f128416bd06e1c92fab",
+      "hash_meta": "e99d8fa98bb3c12d747e22b8c56ff294f56f1bc6c07d1b37cbacc97072984590",
+      "seqno": 4951698
+    },
+    "service": {
+      "entropy": "Hiw38edxgz6WNUOv1WH3z+Et",
+      "hostname": "fkirchner.github.io",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "3.1.2"
+  },
+  "ctime": 1552600891,
+  "expire_in": 504576000,
+  "prev": "4c0b7ee42a9d486d96be89d51b702b9a4304f93e594a6dda40e618764b26cb98",
+  "seqno": 9,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgnQeZKBudyKDIYQbr5OSSC4pdkcEh667sa/QnGxl/rHcKp3BheWxvYWTESpcCCcQgTAt+5CqdSG2WvonVG3ArmkME+T5ZSm3aQOYYdksmy5jEIKOZ56IcF6jbK4LsMp55KGf4bkeyBEGe/FzrUBYCPuyBAgHCo3NpZ8RACJxSl/BwELIKIcIdI8QBVEbhcS3O7rORLUSuZuDd0cnq+kjjdK5UN8Tzqw+xROrnFdMxHt7hXcfnWj3Snxz1AahzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEICxB18km28A5y5gG6Tn5dl94vl4VwUmKzbnuBFsDiiw8o3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/fkirchner
+
+==================================================================
