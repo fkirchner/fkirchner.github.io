@@ -69,18 +69,19 @@ div.icon
   color: $hi-color
 
 div.header
-  @extend div.generic
+  @include span(last 12)
   @extend div.contrast
   border-top: none
-  padding-top: 3*$spacing
+  // padding-top: 3*$spacing
   // margin-bottom: $spacing
   div.title
     @include span(6 of 12)
+    padding:  10*$spacing 0 10*$spacing 0
     margin-left: span(2 wide of 12)
   h1
     margin-top: 0
     margin-bottom: 0 //$spacing*1.618
-    font-weight: 600
+    font-weight: 400
   h3
     // @include span(6 of 12)
     margin-top: 0
@@ -89,6 +90,7 @@ div.header
     font-weight: 300
   nav
     @include span(last 3 of 12)
+    padding:  10*$spacing 0 10*$spacing 0
     ul
       margin: 0
       padding: 0
@@ -98,7 +100,7 @@ div.header
     a
       margin: 0
       padding: 4px 3px 8px 3px
-      border: 1px dashed $link-color
+      // border: 1px dashed $link-color
       // padding-right: 6px
       color: $bg-contrast-color + #080808
       background: $link-color
@@ -187,7 +189,7 @@ div.footer
   font-size: smaller
   div.icon
     font-size: small
-    color: $hi-color
+    color: $lo-color
   h4
     @include span(7)
     margin-top: 0.2em
