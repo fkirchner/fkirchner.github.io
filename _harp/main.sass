@@ -5,9 +5,9 @@
 $susy: (columns: 12, gutters: .25, gutter-position: after, container: 100%)
 
 $bg-color: #fbfbfb
-$bg-contrast-color: #333
-$fg-color: #333
-$hi-color: $fg-color+#999 //#95001a
+$bg-contrast-color: #333333
+$fg-color: #333333
+$hi-color: #ccc //#95001a
 $lo-color: transparentize($bg-color,0.9)
 $link-color: #3b94d9
 $map-height: 300px
@@ -70,7 +70,7 @@ div.icon
 
 div.header
   @include span(last 12)
-  @extend div.contrast
+  @extend div, .contrast
   border-top: none
   // padding-top: 3*$spacing
   // margin-bottom: $spacing
@@ -102,13 +102,13 @@ div.header
       padding: 4px 3px 8px 3px
       // border: 1px dashed $link-color
       // padding-right: 6px
-      color: $bg-contrast-color + #080808
+      color: #3b3b3b //$bg-contrast-color + #080808
       background: $link-color
       background-clip: padding-box
 
 
 div.map
-  @extend div.generic
+  @extend div, .generic
   iframe
     border: none
     @include span(4 of 12)
@@ -130,8 +130,8 @@ div.map
       @extend .col
 
 div.tools
-  @extend div.generic
-  @extend div.contrast
+  @extend div, .generic
+  @extend div, .contrast
   p
     @include span(4)
     margin: 0
@@ -161,7 +161,7 @@ div.tools
     color: $lo-color
 
 div.writing
-  @extend div.generic
+  @extend div, .generic
   div.twitter
     @include span(3 of 12)
     @extend .col
@@ -184,8 +184,8 @@ div.col
   margin-bottom: 1em
 
 div.footer
-  @extend div.generic
-  @extend div.contrast
+  @extend div, .generic
+  @extend div, .contrast
   font-size: smaller
   div.icon
     font-size: small
