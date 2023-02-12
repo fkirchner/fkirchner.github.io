@@ -1,10 +1,10 @@
 all: server
 
 server:
-	harp server
+	harp .
 
 compile:
-	(cd ../ && harp compile _harp ./)
+	(cd ../ && harp _harp/ ./)
 
 bib_sync:
 	cp ../../research.bib/fk.bib .
