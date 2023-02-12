@@ -5,11 +5,11 @@
 $susy: (columns: 12, gutters: .25, gutter-position: after, container: 100%)
 
 $bg-color: #fbfbfb
-$bg-contrast-color: #333333
+$bg-contrast-color: #041e42 //333333
 $fg-color: #333333
 $hi-color: #ccc //#95001a
-$lo-color: transparentize($bg-color,0.9)
-$link-color: #3b94d9
+$lo-color: #354a67 // = transparentize($bg-color,0.8)
+$link-color: #95001a //3b94d9
 $map-height: 300px
 $spacing: 2em
 $border: none //$hi-color+#222 solid 1px
@@ -102,8 +102,8 @@ div.header
       padding: 4px 3px 8px 3px
       // border: 1px dashed $link-color
       // padding-right: 6px
-      color: #3b3b3b //$bg-contrast-color + #080808
-      background: $link-color
+      color: $hi-color // #3b3b3b // = $bg-contrast-color + #080808
+      background: $lo-color
       background-clip: padding-box
 
 
